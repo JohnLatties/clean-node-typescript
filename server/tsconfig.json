@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "module": "commonjs",
-    "target": "ES2017",
+    "target": "ES2019",
     "esModuleInterop": true,
     "strict": true,
     "resolveJsonModule": true,
@@ -9,36 +10,23 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
-      "@infra/*": [
-        "./src/infra/*"
-      ],
       "@domain/*": [
         "./src/domain/*"
+      ],
+      "@application/*": [
+        "./src/application/*"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
       ]
-    },
-    "types": [
-      "jest",
-      "node"
-    ]
+    }
   },
-  "types": [
-    "reflect-metadata",
-    "jest"
-  ],
-  "typeRoots": [
-    "./types",
-    "./node_modules/@types"
-  ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.test.ts"
+    "node_modules"
   ],
   "include": [
-    "./src/**/*.ts"
+    "src/**/*"
   ]
 }
