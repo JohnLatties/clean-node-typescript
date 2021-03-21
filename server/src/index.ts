@@ -1,12 +1,5 @@
-import https from 'https'
+import infraHttps from '@infra/http'
 
-const { createServer } = https;
+console.log('Test', infraHttps)
 
-console.log('Test', createServer);
-
-
-
-
-
-
-
+export default infraHttps

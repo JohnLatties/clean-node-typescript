@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
     "module": "commonjs",
-    "target": "ES2015",
+    "target": "ES2017",
     "esModuleInterop": true,
     "strict": true,
     "resolveJsonModule": true,
@@ -10,6 +9,7 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
     "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
@@ -19,12 +19,26 @@
       "@domain/*": [
         "./src/domain/*"
       ]
-    }
+    },
+    "types": [
+      "jest",
+      "node"
+    ]
   },
+  "types": [
+    "reflect-metadata",
+    "jest"
+  ],
+  "typeRoots": [
+    "./types",
+    "./node_modules/@types"
+  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts"
   ],
   "include": [
-    "src/**/*"
+    "./src/**/*.ts"
   ]
 }
