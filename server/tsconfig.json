@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "ES2015",
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@infra/*": [
+        "./src/infra/*"
+      ],
+      "@domain/*": [
+        "./src/domain/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}
