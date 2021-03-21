@@ -1,0 +1,11 @@
+.github
+bin
+node_modules
+static
+coverage
+jest-coverage
+dist
+/*.js
+
+*.graphql
+*.d.ts
