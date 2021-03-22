@@ -1,6 +1,6 @@
 
-import { ICarBrandScrapingData } from '@application/query/carBrandScrapingQuery/ICarBrandScrapingData'
-import { CarBrandScrapingModel } from '@application/query/carBrandScrapingQuery/model'
+import { ICarBrandScrapingData } from '@domain/useCases/registerCarBrandScraping/ICarBrandScrapingData'
+import { CarBrandScrapingModel } from '@domain/useCases/registerCarBrandScraping/model'
 import { browser } from '../helper'
 import { searchCarBrand } from './searchCarBrand'
 

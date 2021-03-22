@@ -1,4 +1,4 @@
-import { CarBrandScrapingModel } from '@application/query/carBrandScrapingQuery/model'
+import { CarBrandScrapingModel } from '@domain/useCases/registerCarBrandScraping/model'
 import { Browser } from 'puppeteer'
 import { sleep } from '../helper'
 import { searchCar } from './searchCar'
