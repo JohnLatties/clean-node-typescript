@@ -1,11 +1,12 @@
+import { ICarBrandScrapingData } from './ICarBrandScrapingData'
 import { CarBrandScrapingModel } from './model'
 
-function CarBrandScrapingQuery () {
+function CarBrandScrapingQuery (carBrandScrapingData: ICarBrandScrapingData) {
+  const _carBrandScrapingData = carBrandScrapingData
   return {
     execute: async function (): Promise<CarBrandScrapingModel[]> {
-      const carScrap = { name: 'name', image: 'image.png', price: 1000.00, detailsUrl: 'url' }
-      const carBrand: CarBrandScrapingModel = { title: 'brand', image: 'brand.png', cars: [carScrap], detailsUrl: 'url' }
-      return [carBrand]
+      const result = await _carBrandScrapingData.searchData()
+      return result
     }
   }
 }
