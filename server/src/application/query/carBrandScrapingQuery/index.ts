@@ -1,7 +1,11 @@
 import { ICarBrandScrapingData } from './ICarBrandScrapingData'
 import { CarBrandScrapingModel } from './model'
 
-function CarBrandScrapingQuery (carBrandScrapingData: ICarBrandScrapingData) {
+export interface ICarBrandScrapingQuery {
+  execute: () => Promise<CarBrandScrapingModel[]>
+}
+
+function CarBrandScrapingQuery (carBrandScrapingData: ICarBrandScrapingData): ICarBrandScrapingQuery {
   const _carBrandScrapingData = carBrandScrapingData
   return {
     execute: async function (): Promise<CarBrandScrapingModel[]> {
