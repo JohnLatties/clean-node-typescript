@@ -24,4 +24,7 @@ MongoHelper
   .then(async () => {
     await start()
   })
-  .catch(console.error)
+  .catch((err) => {
+    console.error(err)
+    process.exit(0)
+  })
