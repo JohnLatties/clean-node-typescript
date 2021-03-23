@@ -26,7 +26,7 @@ export async function searchCar (browser: Browser, brandUrl: string, attempt: nu
           const name = (carCard.querySelector('h4>span>span') as HTMLSpanElement).textContent!
           const year = (carCard.querySelector('p>span>span>span>a') as HTMLLinkElement).textContent!
           const pageUrl = (carCard.querySelector('p>span>span>span>a') as HTMLLinkElement).href!
-          const image = (carCard.querySelector('img') as HTMLImageElement).src!
+          const image = (carCard.querySelector('img') as HTMLImageElement).src.replace('https://static.wixstatic.com/media/', '')!
           const price = 0
 
           return {
