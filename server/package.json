@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test": "jest --passWithNoTests --runInBand --no-cache --coverage",
     "test:watch": "npm test -- --watchAll",
     "test:staged": "npm test -- --findRelatedTests",
     "start": "node dist/index.js",
@@ -25,6 +25,7 @@
     "@types/express-fileupload": "^1.1.3",
     "@types/helmet": "^0.0.47",
     "@types/jest": "^26.0.0",
+    "@types/mongodb": "^3.6.10",
     "@types/puppeteer": "^5.4.3",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
@@ -44,6 +45,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "mongodb": "^3.6.5",
     "puppeteer": "^8.0.0"
   }
 }
