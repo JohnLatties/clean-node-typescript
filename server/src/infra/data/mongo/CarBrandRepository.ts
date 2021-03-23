@@ -25,7 +25,7 @@ function CarBrandRepository (): ICarBrandRepository {
       const carBrandsCollection = await getCollection()
       const exists = await this.exists(carBrand.name)
       if (!exists) {
-        carBrandsCollection.insertOne(carBrand)
+        await carBrandsCollection.insertOne({ ...carBrand })
       }
     },
     addMany: async function (carBrands: CarBrandData[]) {
