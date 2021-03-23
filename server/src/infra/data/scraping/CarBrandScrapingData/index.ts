@@ -1,7 +1,7 @@
 
 import { ICarBrandScrapingData } from '@domain/useCases/registerCarBrandScraping/ICarBrandScrapingData'
 import { CarBrandScrapingModel } from '@domain/useCases/registerCarBrandScraping/model'
-import config from 'src/main/config'
+import config from '../../../../main/config'
 import { browser } from '../helper'
 import { searchCarBrand } from './searchCarBrand'
 
