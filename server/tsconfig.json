@@ -15,8 +15,8 @@
       "@domain/*": [
         "./src/domain/*"
       ],
-      "@application/*": [
-        "./src/application/*"
+      "@crosscutting/*": [
+        "./src/crosscutting/*"
       ],
       "@infra/*": [
         "./src/infra/*"
