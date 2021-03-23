@@ -1,10 +1,11 @@
 
 import { ICarBrandScrapingData } from '@domain/useCases/registerCarBrandScraping/ICarBrandScrapingData'
 import { CarBrandScrapingModel } from '@domain/useCases/registerCarBrandScraping/model'
+import config from 'src/main/config'
 import { browser } from '../helper'
 import { searchCarBrand } from './searchCarBrand'
 
-const URL = 'https://www.withclutch.com/'
+const URL = config.scraping.url
 const carBrandScrapingData: ICarBrandScrapingData = {
   searchData: async function (): Promise<CarBrandScrapingModel[]> {
     const browserInstace = await browser.startBrowser()
