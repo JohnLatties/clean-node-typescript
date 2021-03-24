@@ -2,7 +2,7 @@ import { ICarBrandRepository } from '@domain/models/carBrand/ICarBranRepository'
 import { Controller } from '@presentation/base/controller'
 import { HttpResponse, ok, serverError } from '@presentation/base/https'
 
-function CatBrandController (carBrandRepository: ICarBrandRepository): Controller {
+function CarBrandController (carBrandRepository: ICarBrandRepository): Controller {
   const _carBrandRepository = carBrandRepository
   return {
     handle: async function (): Promise<HttpResponse> {
@@ -17,4 +17,4 @@ function CatBrandController (carBrandRepository: ICarBrandRepository): Controlle
   }
 }
 
-export default CatBrandController
+export default CarBrandController
