@@ -7,7 +7,7 @@ const config: IConfig = {
     url: process.env.SCRAPING_URL || ''
   },
   db: {
-    url: process.env.MONGO_URL || ''
+    url: process.env.MONGO_DB_URL || ''
   }
 }
 
