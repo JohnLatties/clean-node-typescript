@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Subaru",
+    "image": "https://static.wixstatic.com/media/b00f6a_a56dcfd7fb9d48caa0d2c1dffab0ce94~mv2.png",
+    "cars": [
+      {
+        "name": "Subaru Ascent 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30160.jpg",
+        "price": 41377
+      },
+      {
+        "name": "Subaru Crosstrek 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/31118.jpg",
+        "price": 24348
+      },
+      {
+        "name": "Subaru Impreza 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/31077.jpg",
+        "price": 23382
+      },
+      {
+        "name": "Subaru Outback 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30628.jpg",
+        "price": 28882
+      },
+      {
+        "name": "Subaru WRX 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30773.jpg",
+        "price": 29653
+      }
+    ]
+  },
+  {
+    "name": "Fiat",
+    "image": "https://static.wixstatic.com/media/b00f6a_0965ff410b29461abcf6e56f96c10fbb~mv2.png",
+    "cars": [
+      {
+        "name": "FIAT 124 Spider 2019",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28168.jpg",
+        "price": 25981
+      },
+      {
+        "name": "FIAT 500 Abarth 2018",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28233.jpg",
+        "price": 0
+      },
+      {
+        "name": "FIAT 500X 2018",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/27523.jpg",
+        "price": 13140
+      },
+      {
+        "name": "FIAT 500e 2017",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/24812.jpg",
+        "price": 7491
+      },
+      {
+        "name": "FIAT 500 2018",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/29744.jpg",
+        "price": 15092
+      }
+    ]
+  },
+  {
+    "name": "Mitsubishi",
+    "image": "https://static.wixstatic.com/media/b00f6a_6b8435c42b1f4506adf577c8aee20359~mv2.png",
+    "cars": [
+      {
+        "name": "Mitsubishi Eclipse 2012",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/13735.jpg",
+        "price": 12251
+      },
+      {
+        "name": "Mitsubishi Endeavor 2008",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/10772.jpg",
+        "price": 5402
+      },
+      {
+        "name": "Mitsubishi Lancer 2017",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/24505.jpg",
+        "price": 11587
+      },
+      {
+        "name": "Mitsubishi Mirage G4 2019",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28922.jpg",
+        "price": 10953
+      },
+      {
+        "name": "Mitsubishi Outlander PHEV 2018",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28286.jpg",
+        "price": 24462
+      }
+    ]
+  }
+]
