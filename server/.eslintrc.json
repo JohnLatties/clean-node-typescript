@@ -29,7 +29,8 @@
           }
         ],
         "eslintno-multiple-empty-lines": "off",
-        "no-dupe-class-members": "off"
+        "no-dupe-class-members": "off",
+        "prefer-promise-reject-errors": "off"
       }
     }
   ],
