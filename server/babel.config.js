@@ -17,7 +17,8 @@ module.exports = {
         alias: {
           '@infra': './src/infra',
           '@domain': './src/domain',
-          '@crosscutting': './src/crosscutting'
+          '@crosscutting': './src/crosscutting',
+          '@presentation': './src/presentation'
         }
       }
     ]
