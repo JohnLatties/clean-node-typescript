@@ -44,3 +44,9 @@ export const ButtonStart = styled.button`
   border: none;
   border-radius: 0;
 `
+
+export const RefCarContainer = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+`
