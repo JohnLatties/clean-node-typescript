@@ -19,7 +19,6 @@ body {
   background-color: #000000;
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  overflow: hidden;
   height: 100%;
 }
 `

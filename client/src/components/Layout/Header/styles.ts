@@ -2,12 +2,14 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  flex: 0 0 auto;
-  position: relative;
-  overflow-y: auto;
   height: 75px;
   background-color: ${({ theme }) => theme.color.background.primary};
   box-shadow: -7px -8px 7px 6px royalblue;
+
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 5;
 `
 
 export const Content = styled.div`
