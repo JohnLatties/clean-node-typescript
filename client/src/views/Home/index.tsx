@@ -1,6 +1,7 @@
 import React from 'react'
 import Landing from '../../components/Landing'
-import { Container } from './styles'
+import SelectCarBrand from '../../components/SelectCarBrand'
+import { ButtonStart, Container, FormArea } from './styles'
 interface Props {
 
 }
@@ -9,6 +10,10 @@ function Home () {
   return (
     <Container>
       <Landing/>
+      <FormArea>
+        <SelectCarBrand/>
+        <ButtonStart> Start</ButtonStart>
+      </FormArea>
     </Container>
   )
 }
