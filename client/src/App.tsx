@@ -1,12 +1,18 @@
 import React from 'react'
+import Header from './components/Layout/Header'
+import MainContent from './components/Layout/MainContent'
 import StyleProvider from './styles'
+import Home from './views/Home'
 
 function App() {
   return (
     <StyleProvider>
-      <div className="App">
-        <h1 style={{color: '#fff'}}>Home</h1>
-      </div>
+      <>
+      <Header/>
+      <MainContent>
+        <Home/>
+      </MainContent>
+      </>
     </StyleProvider>
   );
 }
