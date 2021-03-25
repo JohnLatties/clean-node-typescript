@@ -11,11 +11,11 @@ export const Container = styled.div`
 
 `
 
-export const FormArea = styled.div`
+export const ContentArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: auto;
   position: absolute;
   bottom: 20px;
   width: 350px;
@@ -47,6 +47,7 @@ export const ButtonStart = styled.button`
 
 export const RefCarContainer = styled.div`
   display: flex;
+  justify-content: center;
   width: 100%;
-  margin-top: 30px;
+  margin-bottom: 60px;
 `
