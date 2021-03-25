@@ -33,7 +33,7 @@ function SelectCarBrand({ carBrands, onSelectCarBrand }:SelectCarBrandProps) {
 
   const handleCarBrandChange = (seletedItem: any) => {
     setItem(seletedItem)
-    const carBrand = carBrands.find(item => item._id === seletedItem.valeu)!
+    const carBrand = carBrands.find(item => item._id === seletedItem.value)!
     onSelectCarBrand(carBrand)
  }
   return (

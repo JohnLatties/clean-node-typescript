@@ -17,16 +17,24 @@ export const Container = styled.div`
       border: none;
       border-radius: 0;
 
+      &>div {
+        background-color: #222222;
+        &>div:hover {
+          background-color: #333 !important;
+        }
+      }
+
       &>div>div {
         width: 100%;
       }
+
     }
   }
 `
 
 export const Option = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%
 `
