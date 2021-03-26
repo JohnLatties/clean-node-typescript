@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/johnlatties/.nvm/versions/node/v12.14.1/bin/node /Users/johnlatties/.yarn/bin/yarn.js add -D @types/react-radio-buttons
+
+PATH: 
+  /Users/johnlatties/.google-cloud-sdk/bin:/Users/johnlatties/.yarn/bin:/Users/johnlatties/.config/yarn/global/node_modules/.bin:/Users/johnlatties/.nvm/versions/node/v12.14.1/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/go/bin:/Users/johnlatties/.google-cloud-sdk/bin:/Users/johnlatties/.yarn/bin:/Users/johnlatties/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/johnlatties/Library/Android/sdk/emulator:/Users/johnlatties/Library/Android/sdk/tools:/Users/johnlatties/Library/Android/sdk/tools/bin:/Users/johnlatties/Library/Android/sdk/platform-tools:/usr/local/bin:/Users/johnlatties/Library/Android/sdk/emulator:/Users/johnlatties/Library/Android/sdk/tools:/Users/johnlatties/Library/Android/sdk/tools/bin:/Users/johnlatties/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  12.14.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2freact-radio-buttons: Not found
+      at Request.params.callback [as _callback] (/Users/johnlatties/.yarn/lib/cli.js:66091:18)
+      at Request.self.callback (/Users/johnlatties/.yarn/lib/cli.js:129590:22)
+      at Request.emit (events.js:223:5)
+      at Request.<anonymous> (/Users/johnlatties/.yarn/lib/cli.js:130562:10)
+      at Request.emit (events.js:223:5)
+      at IncomingMessage.<anonymous> (/Users/johnlatties/.yarn/lib/cli.js:130484:12)
+      at Object.onceWrapper (events.js:312:28)
+      at IncomingMessage.emit (events.js:228:7)
+      at endReadableNT (_stream_readable.js:1185:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

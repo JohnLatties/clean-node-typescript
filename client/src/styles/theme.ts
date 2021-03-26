@@ -1,5 +1,3 @@
-
-
 export default {
   title: 'light',
   color: {
@@ -11,7 +9,7 @@ export default {
       accent: '#373737'
     },
     background: {
-      primary: '#000000',
+      primary: 'rgba(0, 0, 0, 0.87)',
       secundary: '#272727',
       accent: '#373737'
     },
