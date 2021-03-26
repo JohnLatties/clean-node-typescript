@@ -9,7 +9,7 @@ function CarBrandRepository (): ICarBrandRepository {
   return {
     findAll: async function (): Promise<CarBrandData[]> {
       const carBrandsCollection = await getCollection()
-      const result = await carBrandsCollection.find().toArray()
+      const result = await carBrandsCollection.find().sort({ name: 1 }).toArray()
       return result
     },
     findByName: async function (name: string): Promise<CarBrandData | null> {
