@@ -27,7 +27,6 @@ export const ContainerScroll = styled.div`
 
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-right: 30px;
 
   -webkit-overflow-scrolling: touch;
 `
