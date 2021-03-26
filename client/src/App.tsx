@@ -1,10 +1,13 @@
 import React from 'react'
+import StyleProvider from './styles'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Home</h1>
-    </div>
+    <StyleProvider>
+      <div className="App">
+        <h1 style={{color: '#fff'}}>Home</h1>
+      </div>
+    </StyleProvider>
   );
 }
 
