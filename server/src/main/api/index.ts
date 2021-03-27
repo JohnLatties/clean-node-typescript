@@ -3,7 +3,8 @@ import cors from 'cors'
 import setupRoutest from './setupRoutest'
 
 const app = express()
-app.use(cors())
+
 app.use(express.json())
+app.use(cors({ origin: '*' }))
 setupRoutest(app)
 export default app
