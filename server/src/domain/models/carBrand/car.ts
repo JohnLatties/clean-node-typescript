@@ -2,13 +2,15 @@ import { InvalidTextError } from '@domain/share/errors/InvalidTextError'
 import { TextProp } from '@domain/share/valueObjects/text'
 import { Either, fail, success } from '@crosscutting/either'
 import { CarData } from './carData'
+import { Entity } from '@domain/share/entity'
 
-export class Car {
+export class Car extends Entity {
   public readonly image: string
   public readonly name: string
   public readonly price: number
 
   private constructor (name: string, image: string, price: number) {
+    super()
     this.name = name
     this.image = image
     this.price = price

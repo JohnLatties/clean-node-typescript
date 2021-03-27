@@ -17,6 +17,11 @@ function CarBrandRepository (): ICarBrandRepository {
       const result = await carBrandsCollection.findOne({ name })
       return result
     },
+    findByKey: async function (key: string): Promise<CarBrandData | null> {
+      const carBrandsCollection = await getCollection()
+      const result = await carBrandsCollection.findOne({ key })
+      return result
+    },
     exists: async function (name: string): Promise<boolean> {
       const result = await this.findByName(name)
       return !(result === null)

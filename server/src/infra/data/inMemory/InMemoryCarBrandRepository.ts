@@ -12,6 +12,11 @@ function InMemoryCarBrandRepository (): ICarBrandRepository {
       if (carBrand) return carBrand
       return null
     },
+    findByKey: async function (key: string): Promise<CarBrandData | null> {
+      const carBrand = await _carBrands.find(item => item.key === key)
+      if (carBrand) return carBrand
+      return null
+    },
     exists: async function (name: string): Promise<boolean> {
       const result = await this.findByName(name)
       return !(result === null)
