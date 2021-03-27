@@ -47,6 +47,8 @@ describe('', () => {
 
     const carBrand = carBrandOrError.value as CarBrand
 
+    expect(carBrand.key).not.toBe(null)
+    expect(carBrand.createdAt).not.toBe(null)
     expect(carBrand.name).toEqual(name)
     expect(carBrand.image).toEqual(image)
     expect(carBrand.cars.length).toEqual(1)

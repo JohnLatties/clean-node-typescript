@@ -4,13 +4,15 @@ import { TextProp } from '@domain/share/valueObjects/text'
 import { Either, fail, success } from '@crosscutting/either'
 import { Car } from './car'
 import { CarBrandData } from './carBrandData'
+import { Entity } from '@domain/share/entity'
 
-export class CarBrand {
+export class CarBrand extends Entity {
   public readonly name: string
   public readonly image: string
   public readonly cars: Car[]
 
   private constructor (name: string, image: string, cars: Car[]) {
+    super()
     this.name = name
     this.image = image
     this.cars = cars
