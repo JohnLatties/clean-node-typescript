@@ -30,7 +30,8 @@ describe('Car entity', () => {
 
     const carOrError = Car.create({ name, image, price })
     const car = carOrError.value as Car
-
+    expect(car.key).not.toBe(null)
+    expect(car.createdAt).not.toBe(null)
     expect(car.name).toEqual(name)
     expect(car.image).toEqual(image)
     expect(car.price).toEqual(price)
