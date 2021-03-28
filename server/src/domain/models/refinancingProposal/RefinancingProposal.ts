@@ -1,5 +1,4 @@
 import { Either, fail, success } from '@crosscutting/either'
-import { InvalidCarError } from '@domain/share/errors/InvalidCarError'
 import { InvalidCarBrandError } from '@domain/share/errors/InvalidCarBrandError'
 import { InvalidAPRError } from '@domain/share/errors/InvalidAPRError'
 import { PaymentPlan } from './PaymentPlan'
@@ -7,6 +6,7 @@ import { InvalidPaymentPlan } from '@domain/share/errors/InvalidPaymentPlan'
 import { Entity } from '@domain/share/entity'
 import { CarBradProposal } from './carBrandProposal'
 import { CarProposal } from './carProposal'
+import { InvalidCarProposalError } from '@domain/share/errors/InvalidCarProposalError'
 
 export class RefinancingProposal extends Entity {
   public readonly proposalNumber: string
@@ -31,20 +31,20 @@ export class RefinancingProposal extends Entity {
   }
 
   static create (carBrand: CarBradProposal, car: CarProposal, apr: number):
-    Either<InvalidCarError | InvalidCarBrandError | InvalidAPRError | InvalidPaymentPlan, RefinancingProposal> {
+    Either<InvalidCarProposalError | InvalidCarBrandError | InvalidAPRError | InvalidPaymentPlan, RefinancingProposal> {
     if (!carBrand || !carBrand.key) {
       return fail(new InvalidCarBrandError('Missing car brand'))
     }
 
     if (!car || !car.key) {
-      return fail(new InvalidCarError(0))
+      return fail(new InvalidCarProposalError('Missing car'))
     }
 
     if (!apr) {
       return fail(new InvalidAPRError(apr))
     }
 
-    const proposalNumber = `#${Date.now}`
+    const proposalNumber = `#${Date.now()}`
     const paymentOptionsOrErros = this.calculatePaymentPlan(car, apr)
 
     const paymentOptionsError = paymentOptionsOrErros.find(item => item.Failed())

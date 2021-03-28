@@ -3,11 +3,11 @@ import { InvalidPaymentPlan } from '@domain/share/errors/InvalidPaymentPlan'
 import { PaymentPlanData } from './paymenPlanData'
 
 export class PaymentPlan {
-  public readonly valeu: number
+  public readonly value: number
   public readonly months: number
 
-  private constructor (valeu: number, months: number) {
-    this.valeu = valeu
+  private constructor (value: number, months: number) {
+    this.value = value
     this.months = months
 
     Object.freeze(this)
