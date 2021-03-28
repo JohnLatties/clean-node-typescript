@@ -8,6 +8,7 @@ export type HttpResponse = {
 
 export interface HttpRequest {
   body?: any
+  params?: any
 }
 
 export const badRequest = (error: Error): HttpResponse => ({
@@ -17,6 +18,11 @@ export const badRequest = (error: Error): HttpResponse => ({
 
 export const forbidden = (error: Error): HttpResponse => ({
   statusCode: 403,
+  body: error
+})
+
+export const notFound = (error: Error): HttpResponse => ({
+  statusCode: 404,
   body: error
 })
 
