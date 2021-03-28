@@ -1,112 +1,50 @@
 [
   {
-    "key": "wer23234-234234234",
-    "name": "Subaru",
-    "image": "https://static.wixstatic.com/media/b00f6a_a56dcfd7fb9d48caa0d2c1dffab0ce94~mv2.png",
+    "key": "0a06e733-a952-467e-850b-5e1e1f8c38c3",
+    "createdAt": "2021-03-27T22:50:39.229Z",
+    "updatedAt": "2021-03-27T22:50:39.229Z",
+    "name": "Acura",
+    "image": "https://static.wixstatic.com/media/b00f6a_33d9b2dc534d415fafc24a9af26bdc85~mv2.png",
     "cars": [
       {
-        "key": "wer23234-234234232",
-        "name": "Subaru Ascent 2020",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30160.jpg",
-        "price": 41377
+        "key": "fecfe64c-307c-4d20-9e57-7ebce9b8fe1d",
+        "createdAt": "2021-03-27T22:50:39.228Z",
+        "updatedAt": "2021-03-27T22:50:39.228Z",
+        "name": "Acura ILX 2019",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30821.jpg",
+        "price": 23416
       },
       {
-        "key": "wer23234-234234qww4",
-        "name": "Subaru Crosstrek 2020",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/31118.jpg",
-        "price": 24348
+        "key": "b3beacfa-dee8-49dc-861e-5396dda369c0",
+        "createdAt": "2021-03-27T22:50:39.228Z",
+        "updatedAt": "2021-03-27T22:50:39.228Z",
+        "name": "Acura MDX Sport Hybrid 2017",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/27683.jpg",
+        "price": 37809
       },
       {
-        "key": "wer23234-234vbgyw4",
-        "name": "Subaru Impreza 2020",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/31077.jpg",
-        "price": 23382
+        "key": "0b1d0f68-092f-44f3-8aee-a90e5de57e72",
+        "createdAt": "2021-03-27T22:50:39.228Z",
+        "updatedAt": "2021-03-27T22:50:39.228Z",
+        "name": "Acura RDX 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30173.jpg",
+        "price": 39318
       },
       {
-        "key": "wer23234-234a34314",
-        "name": "Subaru Outback 2020",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30628.jpg",
-        "price": 28882
+        "key": "66cfe758-62b5-42e0-8565-5d3247193574",
+        "createdAt": "2021-03-27T22:50:39.228Z",
+        "updatedAt": "2021-03-27T22:50:39.228Z",
+        "name": "Acura RLX 2018",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30681.jpg",
+        "price": 33723
       },
       {
-        "key": "wer23234-2988844",
-        "name": "Subaru WRX 2020",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/30773.jpg",
-        "price": 29653
-      }
-    ]
-  },
-  {
-    "key": "pojyewe-rjeerrty",
-    "name": "Fiat",
-    "image": "https://static.wixstatic.com/media/b00f6a_0965ff410b29461abcf6e56f96c10fbb~mv2.png",
-    "cars": [
-      {
-        "key": "pojyewe-rjee234",
-        "name": "FIAT 124 Spider 2019",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28168.jpg",
-        "price": 25981
-      },
-      {
-        "key": "pojyewe-rjeerr3432",
-        "name": "FIAT 500 Abarth 2018",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28233.jpg",
-        "price": 0
-      },
-      {
-        "key": "pojyewe-rjepkjhhg",
-        "name": "FIAT 500X 2018",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/27523.jpg",
-        "price": 13140
-      },
-      {
-        "key": "pojyewe-rje7gbww",
-        "name": "FIAT 500e 2017",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/24812.jpg",
-        "price": 7491
-      },
-      {
-        "key": "pojyewe-363gejf8",
-        "name": "FIAT 500 2018",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/29744.jpg",
-        "price": 15092
-      }
-    ]
-  },
-  {
-    "key": "73tgsdf-sknsdjf",
-    "name": "Mitsubishi",
-    "image": "https://static.wixstatic.com/media/b00f6a_6b8435c42b1f4506adf577c8aee20359~mv2.png",
-    "cars": [
-      {
-        "key": "73tgsdf-wer4uhri",
-        "name": "Mitsubishi Eclipse 2012",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/13735.jpg",
-        "price": 12251
-      },
-      {
-        "key": "73tgsdf-f3rt34r",
-        "name": "Mitsubishi Endeavor 2008",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/10772.jpg",
-        "price": 5402
-      },
-      {
-        "key": "73tgsdf-psideur",
-        "name": "Mitsubishi Lancer 2017",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/24505.jpg",
-        "price": 11587
-      },
-      {
-        "key": "73tgsdf-dwkwkd",
-        "name": "Mitsubishi Mirage G4 2019",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28922.jpg",
-        "price": 10953
-      },
-      {
-        "key": "73tgsdf-eu2erhbfw",
-        "name": "Mitsubishi Outlander PHEV 2018",
-        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/28286.jpg",
-        "price": 24462
+        "key": "5bffa365-e3cf-4ca9-9654-b0be4356245c",
+        "createdAt": "2021-03-27T22:50:39.228Z",
+        "updatedAt": "2021-03-27T22:50:39.228Z",
+        "name": "Acura TLX 2020",
+        "image": "http://media.chromedata.com/autoBuilderData/stockPhotos/31312.jpg",
+        "price": 28327
       }
     ]
   }
