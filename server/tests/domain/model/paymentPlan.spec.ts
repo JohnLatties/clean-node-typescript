@@ -28,6 +28,6 @@ describe('PaymentPlan', () => {
     const paymentPlanOrError = PaymentPlan.create({ value, months })
     const paymentPlan = paymentPlanOrError.value as PaymentPlan
     expect(paymentPlan.months).toBe(months)
-    expect(paymentPlan.valeu).toBe(value)
+    expect(paymentPlan.value).toBe(value)
   })
 })

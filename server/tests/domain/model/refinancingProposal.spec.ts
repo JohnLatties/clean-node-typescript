@@ -2,7 +2,7 @@ import { RefinancingProposal } from '../../../src/domain/models/refinancingPropo
 import { InvalidCarBrandError } from '../../../src/domain/share/errors/InvalidCarBrandError'
 import { InvalidPaymentPlan } from '../../../src/domain/share/errors/InvalidPaymentPlan'
 import { InvalidAPRError } from '../../../src/domain/share/errors/InvalidAPRError'
-import { InvalidCarError } from '../../../src/domain/share/errors/InvalidCarError'
+import { InvalidCarProposalError } from '../../../src/domain/share/errors/InvalidCarProposalError'
 import { fail } from '../../../src/crosscutting/either'
 
 const InvalidCarBrandProposal = {
@@ -48,7 +48,7 @@ describe('RefinancingProposal', () => {
   test('Should not create RefinancingProposal with invalida car', () => {
     const apr = 10
     const refinancingProposalOrError = RefinancingProposal.create(CarBrandProposal, InvalidCarProposal, apr)
-    expect(refinancingProposalOrError).toEqual(fail(new InvalidCarError(0)))
+    expect((refinancingProposalOrError.value as InvalidCarProposalError).message).toMatch(/Missing car./)
   })
 
   test('Should not create RefinancingProposal with invalida APR', () => {
@@ -80,8 +80,8 @@ describe('RefinancingProposal', () => {
     expect(resutl.paymentOptions)
       .toEqual(expect
         .arrayContaining([
-          expect.objectContaining({ valeu: 845.58, months: 36 }),
-          expect.objectContaining({ valeu: 682.97, months: 48 })
+          expect.objectContaining({ value: 845.58, months: 36 }),
+          expect.objectContaining({ value: 682.97, months: 48 })
         ])
       )
   })
