@@ -4,7 +4,7 @@ export interface RefinancingContractData {
   key: string
   proposal: RefinancingProposalData
   paymentPlan: paymentOptionsData
-  createdAt: Date
-  updatedAt: Date
+  createdAt: Date | string
+  updatedAt: Date | string
   signed?: boolean
 }
