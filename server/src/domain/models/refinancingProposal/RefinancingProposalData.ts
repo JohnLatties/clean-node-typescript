@@ -1,7 +1,7 @@
 import { CarBradProposal } from './carBrandProposal'
 import { CarProposal } from './carProposal'
 
-interface paymentOptionsData {
+export interface paymentOptionsData {
   value: number
   months: number
 }
@@ -13,4 +13,7 @@ export interface RefinancingProposalData {
   car: CarProposal
   apr: number
   paymentOptions: paymentOptionsData[]
+  createdAt: Date | string
+  updatedAt: Date | string
+  contractKey?: string
 }

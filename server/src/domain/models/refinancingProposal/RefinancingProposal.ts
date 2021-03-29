@@ -7,6 +7,7 @@ import { Entity } from '@domain/share/entity'
 import { CarBradProposal } from './carBrandProposal'
 import { CarProposal } from './carProposal'
 import { InvalidCarProposalError } from '@domain/share/errors/InvalidCarProposalError'
+import { RefinancingProposalData } from './RefinancingProposalData'
 
 export class RefinancingProposal extends Entity {
   public readonly proposalNumber: string
@@ -14,20 +15,21 @@ export class RefinancingProposal extends Entity {
   public readonly car: CarProposal
   public readonly apr: number
   public readonly paymentOptions: PaymentPlan[]
+  public readonly contractKey?: string
 
   private constructor (
     proposalNumber: string,
     carBrand: CarBradProposal,
     car: CarProposal,
     apr: number,
-    paymentOptions: PaymentPlan[]) {
-    super()
+    paymentOptions: PaymentPlan[],
+    key?: string) {
+    super(key || '')
     this.proposalNumber = proposalNumber
     this.carBrand = carBrand
     this.car = car
     this.apr = apr
     this.paymentOptions = paymentOptions
-    Object.freeze(this)
   }
 
   static create (carBrand: CarBradProposal, car: CarProposal, apr: number):
@@ -54,6 +56,23 @@ export class RefinancingProposal extends Entity {
 
     const paymentOptions = paymentOptionsOrErros.map(item => item.value as PaymentPlan)
     return success(new RefinancingProposal(proposalNumber, carBrand, car, apr, paymentOptions))
+  }
+
+  static bindFrom (data: RefinancingProposalData): Either<Error, RefinancingProposal> {
+    if (!data || !data.key || !(data as RefinancingProposal).createdAt) {
+      return fail(new Error('Invalid data'))
+    }
+
+    return success(new RefinancingProposal(data.proposalNumber, data.carBrand, data.car, data.apr, data.paymentOptions, data.key))
+  }
+
+  public linkContract (contractKey: string) {
+    Object.defineProperties(this, {
+      contractKey: {
+        value: contractKey,
+        writable: true
+      }
+    })
   }
 
   private static calculatePaymentPlan (car: CarProposal, apr: number): Either<InvalidPaymentPlan, PaymentPlan>[] {
