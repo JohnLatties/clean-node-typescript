@@ -5,6 +5,7 @@ import { InvalidRefinancingProposalError } from '@domain/share/errors/InvalidRef
 import { PaymentPlanData } from '../refinancingProposal/paymenPlanData'
 import { RefinancingProposal } from '../refinancingProposal/RefinancingProposal'
 import { RefinancingProposalData } from '../refinancingProposal/RefinancingProposalData'
+import { RefinancingContractData } from './RefinancingContractData'
 
 export class RefinancingContract extends Entity {
   public readonly proposal: RefinancingProposal
@@ -13,14 +14,15 @@ export class RefinancingContract extends Entity {
 
   private constructor (
     proposal: RefinancingProposal,
-    paymentPlan: PaymentPlanData
+    paymentPlan: PaymentPlanData,
+    key?: string
   ) {
-    super()
+    super(key || '')
     this.proposal = proposal
     this.paymentPlan = paymentPlan
   }
 
-  static create (proposal: RefinancingProposalData, paymentPlan: PaymentPlanData)
+  static create (proposal: RefinancingProposalData, paymentPlan: PaymentPlanData, key?: string)
     : Either<InvalidRefinancingProposalError | InvalidPaymentPlan, RefinancingContract> {
     if (!proposal ||
       !proposal.key ||
@@ -44,14 +46,27 @@ export class RefinancingContract extends Entity {
 
     const proposalEntity = proposalOrError.value
 
-    return success(new RefinancingContract(proposalEntity, paymentPlan))
+    return success(new RefinancingContract(proposalEntity, paymentPlan, key))
+  }
+
+  static bindFrom (data: RefinancingContractData) {
+    if (!data || !data.key || !(data as RefinancingContract).createdAt) {
+      return fail(new Error('Invalid data'))
+    }
+
+    const bindOrError = this.create(data.proposal, data.paymentPlan, data.key)
+    if (bindOrError.Failed()) {
+      return fail(new Error(bindOrError.value.message))
+    }
+
+    return success(bindOrError.value)
   }
 
   public sign () {
     Object.defineProperties(this, {
       signed: {
         value: true,
-        writable: false
+        writable: true
       }
     })
   }
