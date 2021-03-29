@@ -21,6 +21,9 @@ function RefinancingContractRepository (): IRefinancingContractRepository {
     },
     delete: async function (key: string): Promise<void> {
       _data = _data.filter(item => item.key !== key)
+    },
+    findAllSigned: async function () {
+      return _data.filter(item => item.signed)
     }
   }
 }
