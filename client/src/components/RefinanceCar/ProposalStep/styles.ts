@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { RadioGroup, Radio } from 'react-radio-input'
+import { RadioGroup } from 'react-radio-input'
 
 export const Container = styled.div`
   display: flex;
