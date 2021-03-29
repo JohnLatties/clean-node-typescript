@@ -18,6 +18,12 @@ function RefinancingContractRepository (): IRefinancingContractRepository {
     findByKey: async function (key: string) {
       const result = _data.find(item => item.key === key)
       return result || null
+    },
+    delete: async function (key: string): Promise<void> {
+      _data = _data.filter(item => item.key !== key)
+    },
+    findAllSigned: async function () {
+      return _data.filter(item => item.signed)
     }
   }
 }
