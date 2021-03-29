@@ -22,7 +22,7 @@ function SelectCarBrand({ carBrands, onSelectCarBrand }:SelectCarBrandProps) {
 
   function mapCarBrandOptions(carBrands : CarBrand[]) {
     return carBrands.map(item => ({
-      value: item._id, label: <Option>
+      value: item.key, label: <Option>
       <OptionImg src={item.image} />
         <OptionText>
           {item.name}
@@ -33,7 +33,7 @@ function SelectCarBrand({ carBrands, onSelectCarBrand }:SelectCarBrandProps) {
 
   const handleCarBrandChange = (seletedItem: any) => {
     setItem(seletedItem)
-    const carBrand = carBrands.find(item => item._id === seletedItem.value)!
+    const carBrand = carBrands.find(item => item.key === seletedItem.value)!
     onSelectCarBrand(carBrand)
  }
   return (

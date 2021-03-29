@@ -11,7 +11,7 @@ interface ProposalStepProps {
 
 
 function ProposalStep ({proposal, onAccept, chosenPaymentPlan}: ProposalStepProps) {
-  const { carBrand, car, number, paymentOptions, apr } = proposal
+  const { carBrand, car, proposalNumber, paymentOptions, apr } = proposal
   const [paymentOption, setPaymentOption] = useState('')
 
   function handleAcceptProposal() {
@@ -25,7 +25,7 @@ function ProposalStep ({proposal, onAccept, chosenPaymentPlan}: ProposalStepProp
         <Description>
           {`Payments for your ${carBrand.name}, model ${car.name}  at a ${apr}% APR would be:`}
         </Description>
-        <Description>{`Propose number: ${number}`}</Description>
+        <Description>{`Propose number: ${proposalNumber}`}</Description>
       </>
       )
   }

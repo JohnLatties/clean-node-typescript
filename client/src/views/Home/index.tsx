@@ -3,15 +3,16 @@ import Landing from '../../components/Landing'
 import RefinanceCar from '../../components/RefinanceCar'
 import SelectCarBrand from '../../components/SelectCarBrand'
 import { CarBrand } from '../../models/CarBrand'
+import { Proposal } from '../../models/Proposal'
 import { CarBrandApi } from '../../services/api/carBrandApi'
+import { ProposalApi } from '../../services/api/refinancingProposalApi'
 import { ButtonStart, Container, ContentArea, RefCarContainer } from './styles'
-interface Props {
 
-}
 
 function Home () {
   const [carBrands, setCarBrands] = useState<CarBrand[]>([])
-  const [selectedCarBrand, setSelectedCarBrand] = useState<CarBrand| null>(null)
+  const [selectedCarBrand, setSelectedCarBrand] = useState<CarBrand| undefined>(undefined)
+  const [proposal, setProposal] = useState<Proposal | undefined>(undefined)
   const [startRefinanceCar, setStarRefinanceCar] = useState<boolean>(false)
   useEffect(() => {
     loadCarBrands()
@@ -25,7 +26,15 @@ function Home () {
 
  function handleSelecCarBrand(carBrand:CarBrand) {
     setSelectedCarBrand(carBrand)
+    setProposal(undefined)
     setStarRefinanceCar(false)
+ }
+
+ async function handleCreateProposal (carBrandKey: string, carKey: string) {
+    const proposalApi = new ProposalApi()
+    const createdResponse = await proposalApi.save(carBrandKey, carKey)
+    const proposalResponse = await proposalApi.get(createdResponse.key)
+    setProposal(proposalResponse)
  }
 
  function handleStarRefinanceCar() {
@@ -52,9 +61,12 @@ function Home () {
         </>
       </ContentArea>
     </Container>
-    {startRefinanceCar &&
+    {(startRefinanceCar && selectedCarBrand) &&
       <RefCarContainer>
-        <RefinanceCar carBrand={selectedCarBrand!}/>
+        <RefinanceCar carBrand={selectedCarBrand}
+         proposal={proposal}
+         onCreateProposal={handleCreateProposal}
+         />
       </RefCarContainer>
     }
     </>

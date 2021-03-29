@@ -1,8 +1,8 @@
-import { Car } from './Cat'
+import { Car } from './Car'
 
 
 export interface CarBrand {
-  _id: string
+  key: string
   name: string
   image: string
   cars: Car[]

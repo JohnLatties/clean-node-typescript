@@ -11,7 +11,7 @@ function ContractStep({contract, onSignContract }: ContractStepProps) {
   const [agreed, setAgreed] = useState(false)
 
   const { proposal, playmentPlan, signed } = contract
-  const { car, carBrand, number} = proposal
+  const { car, carBrand, proposalNumber} = proposal
 
   return(
     <Container>
@@ -19,7 +19,7 @@ function ContractStep({contract, onSignContract }: ContractStepProps) {
         {`Car refinancing: ${car.name} - (${carBrand.name})`}
       </Description>
       <Description>
-        {`Proposal number: ${number}`}
+        {`Proposal number: ${proposalNumber}`}
       </Description>
       <Description>
         {`Payment plan: $${playmentPlan.value} in ${playmentPlan.months} months`}
