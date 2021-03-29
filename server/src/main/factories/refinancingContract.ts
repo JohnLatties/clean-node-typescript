@@ -1,8 +1,10 @@
 import RegisterRefinancingContract from '@domain/useCases/registerRefinancingContract'
+import SignRefinancingContract from '@domain/useCases/signRefinancingContract'
 import RefinancingContractRepository from '@infra/data/mongo/RefinancingContractRepository'
 import RefinancingProposalRepository from '@infra/data/mongo/RefinancingProposalRepository'
 import FindRefinancingContractController from '@presentation/controllers/contract/findRefinancingContractController'
 import RefinancingContractController from '@presentation/controllers/contract/saveRefinancingContractController'
+import SignRefinancingContractController from '@presentation/controllers/contract/signRefinancingContractController'
 
 export const createRegisterRefinancingContractController = () => {
   const refinancingContractRepository = RefinancingContractRepository()
@@ -19,5 +21,12 @@ export const createRegisterRefinancingContractController = () => {
 export const createFindRefinancingContractController = () => {
   const refinancingContractRepository = RefinancingContractRepository()
   const findRefinancingContractController = FindRefinancingContractController(refinancingContractRepository)
+  return findRefinancingContractController
+}
+
+export const createSignRefinancingContractController = () => {
+  const refinancingContractRepository = RefinancingContractRepository()
+  const signRefinancingContract = SignRefinancingContract(refinancingContractRepository)
+  const findRefinancingContractController = SignRefinancingContractController(signRefinancingContract)
   return findRefinancingContractController
 }
