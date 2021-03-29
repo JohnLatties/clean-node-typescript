@@ -3,8 +3,10 @@ import Landing from '../../components/Landing'
 import RefinanceCar from '../../components/RefinanceCar'
 import SelectCarBrand from '../../components/SelectCarBrand'
 import { CarBrand } from '../../models/CarBrand'
+import { Contract } from '../../models/Contract'
 import { Proposal } from '../../models/Proposal'
 import { CarBrandApi } from '../../services/api/carBrandApi'
+import { ContractApi } from '../../services/api/refinancingContractApi'
 import { ProposalApi } from '../../services/api/refinancingProposalApi'
 import { ButtonStart, Container, ContentArea, RefCarContainer } from './styles'
 
@@ -13,6 +15,7 @@ function Home () {
   const [carBrands, setCarBrands] = useState<CarBrand[]>([])
   const [selectedCarBrand, setSelectedCarBrand] = useState<CarBrand| undefined>(undefined)
   const [proposal, setProposal] = useState<Proposal | undefined>(undefined)
+  const [contract, setContract] = useState<Contract | undefined>(undefined)
   const [startRefinanceCar, setStarRefinanceCar] = useState<boolean>(false)
   useEffect(() => {
     loadCarBrands()
@@ -35,6 +38,13 @@ function Home () {
     const createdResponse = await proposalApi.save(carBrandKey, carKey)
     const proposalResponse = await proposalApi.get(createdResponse.key)
     setProposal(proposalResponse)
+  }
+
+ async function handleCreateContract (proposalKey: string, paymentPlan: number) {
+    const contractApi = new ContractApi()
+    const createdResponse = await contractApi.save(proposalKey, paymentPlan)
+    const contractResponse = await contractApi.get(createdResponse.key)
+    setContract(contractResponse)
  }
 
  function handleStarRefinanceCar() {
@@ -66,6 +76,8 @@ function Home () {
         <RefinanceCar carBrand={selectedCarBrand}
          proposal={proposal}
          onCreateProposal={handleCreateProposal}
+         contract={contract}
+         onCreateContract={handleCreateContract}
          />
       </RefCarContainer>
     }
