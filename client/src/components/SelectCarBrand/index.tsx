@@ -3,7 +3,7 @@ import { Container, Option, OptionImg, OptionText } from './styles'
 import Select from 'react-select'
 import { CarBrand } from '../../models/CarBrand'
 
-interface Option {
+interface OptionItem {
   value: string
   label: any
 }
@@ -14,8 +14,8 @@ interface SelectCarBrandProps {
 }
 
 function SelectCarBrand({ carBrands, onSelectCarBrand }:SelectCarBrandProps) {
-  const [item, setItem] = useState<Option|null>(null);
-  const [options, setOptions] = useState<Option[]>([]);
+  const [item, setItem] = useState<OptionItem|null>(null);
+  const [options, setOptions] = useState<OptionItem[]>([]);
   useEffect(() => {
     setOptions(mapCarBrandOptions(carBrands))
   },[carBrands] )

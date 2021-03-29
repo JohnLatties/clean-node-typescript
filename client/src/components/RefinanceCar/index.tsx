@@ -16,6 +16,7 @@ interface RefinanceCarProps {
   contract?: Contract
   onCreateProposal?: (carBrandKey: string, carKey: string) => void
   onCreateContract?: (proposalKey: string, paymentPlan: number) => void
+  onSignContract?: () => void
 }
 
 interface Step{
@@ -25,9 +26,14 @@ interface Step{
   showSignContract?: boolean
 }
 
-function RefinanceCar ({carBrand, proposal, contract, onCreateProposal, onCreateContract}: RefinanceCarProps) {
+function RefinanceCar ({
+  carBrand,
+  proposal,
+  contract,
+  onCreateProposal,
+  onCreateContract,
+  onSignContract}: RefinanceCarProps) {
   const [steps, setStep] = useState<Step>({showSelectBrand: true})
-  const [car, setCar] = useState<Car | null>(null)
   const [paymentPlan, setPaymentPlan] = useState<PaymentPlan | null>(null)
 
   useEffect(() => {
@@ -49,18 +55,15 @@ function RefinanceCar ({carBrand, proposal, contract, onCreateProposal, onCreate
   }, [proposal, contract])
 
   function initWithContract(contract: Contract) {
-    setCar(contract.proposal.car)
     setPaymentPlan(contract.paymentPlan)
     setStep({...steps, showSignContract: true})
   }
 
   function initWithProposal(proposal: Proposal) {
-    setCar(proposal.car)
     setStep({...steps, showSelectProposal: true})
   }
   
   function handeRequestProposal(car: Car) {
-    setCar(car)
     if(onCreateProposal) onCreateProposal(carBrand!.key, car.key)
   }
 
@@ -69,6 +72,10 @@ function RefinanceCar ({carBrand, proposal, contract, onCreateProposal, onCreate
      
       setStep({...steps, showSignContract: true})
       if(onCreateContract) onCreateContract(proposal!.key, paymentPlan.months)
+  }
+
+  function handleSignContract() {
+      if(onSignContract) onSignContract()
   }
 
   return (
@@ -106,7 +113,7 @@ function RefinanceCar ({carBrand, proposal, contract, onCreateProposal, onCreate
             <img style={{height: 50, width: 50}} src={next} alt='next'/>
         </div>
         <RefinanceStepBase title='Sign contract'>
-          <ContractStep contract={contract} onSignContract={() =>{}}/>
+          <ContractStep contract={contract} onSignContract={handleSignContract}/>
          </RefinanceStepBase>
       </>}
 

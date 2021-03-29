@@ -28,9 +28,15 @@ function Home () {
  }
 
  function handleSelecCarBrand(carBrand:CarBrand) {
+    clearFrom()
     setSelectedCarBrand(carBrand)
-    setProposal(undefined)
-    setStarRefinanceCar(false)
+ }
+
+ function clearFrom() {
+  setSelectedCarBrand(undefined)
+  setProposal(undefined)
+  setContract(undefined)
+  setStarRefinanceCar(false)
  }
 
  async function handleCreateProposal (carBrandKey: string, carKey: string) {
@@ -45,6 +51,13 @@ function Home () {
     const createdResponse = await contractApi.save(proposalKey, paymentPlan)
     const contractResponse = await contractApi.get(createdResponse.key)
     setContract(contractResponse)
+ }
+
+ async function handleSignContract () {
+    const contractApi = new ContractApi()
+     await contractApi.sign(contract?.key!)
+     console.log('Go to Signed contract view')
+     clearFrom()
  }
 
  function handleStarRefinanceCar() {
@@ -78,6 +91,7 @@ function Home () {
          onCreateProposal={handleCreateProposal}
          contract={contract}
          onCreateContract={handleCreateContract}
+         onSignContract={handleSignContract}
          />
       </RefCarContainer>
     }

@@ -24,7 +24,8 @@ export class ContractApi extends HttpClient {
       paymentPlan
     })
 
-
   public get = (key: string) => this.instance.get<Contract>(`api/contracts/${key}`)
+  public getSigneds = () => this.instance.get<Contract>(`api/contracts/signed`)
+  public sign = (key: string) => this.instance.put<Contract>(`api/contracts/${key}/sign`)
 
 }
