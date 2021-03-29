@@ -32,6 +32,11 @@ function RefinancingContractRepository (): IRefinancingContractRepository {
         const refinancingContractlCollection = await getCollection()
         await refinancingContractlCollection.deleteOne({ key })
       }
+    },
+    findAllSigned: async function () {
+      const refinancingContractlCollection = await getCollection()
+      const result = await refinancingContractlCollection.find({ signed: true }).toArray()
+      return result
     }
   }
 }
