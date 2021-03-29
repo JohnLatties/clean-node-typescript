@@ -11,9 +11,11 @@ import { PaymentPlan, Proposal } from '../../models/Proposal'
 import { Contract } from '../../models/Contract'
 import ContractStep from './ContractStep'
 interface RefinanceCarProps {
-  carBrand: CarBrand,
+  carBrand: CarBrand
   proposal?: Proposal
+  contract?: Contract
   onCreateProposal?: (carBrandKey: string, carKey: string) => void
+  onCreateContract?: (proposalKey: string, paymentPlan: number) => void
 }
 
 interface Step{
@@ -23,12 +25,10 @@ interface Step{
   showSignContract?: boolean
 }
 
-function RefinanceCar ({carBrand, proposal, onCreateProposal}: RefinanceCarProps) {
+function RefinanceCar ({carBrand, proposal, contract, onCreateProposal, onCreateContract}: RefinanceCarProps) {
   const [steps, setStep] = useState<Step>({showSelectBrand: true})
   const [car, setCar] = useState<Car | null>(null)
-  // const [proposal, setProposal] = useState<Proposal | null>(null)
   const [paymentPlan, setPaymentPlan] = useState<PaymentPlan | null>(null)
-  const [contract, setContract] = useState<Contract | null>(null)
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,25 +37,38 @@ function RefinanceCar ({carBrand, proposal, onCreateProposal}: RefinanceCarProps
   }, [])
 
   useEffect(() => {
-   if(proposal)  setStep({...steps, showSelectProposal: true})
-  }, [proposal])
+    if(contract) {
+      initWithContract(contract)
+      return
+    }
 
+   if(proposal) {
+    initWithProposal(proposal)
+    return
+   }
+  }, [proposal, contract])
+
+  function initWithContract(contract: Contract) {
+    setCar(contract.proposal.car)
+    setPaymentPlan(contract.paymentPlan)
+    setStep({...steps, showSignContract: true})
+  }
+
+  function initWithProposal(proposal: Proposal) {
+    setCar(proposal.car)
+    setStep({...steps, showSelectProposal: true})
+  }
+  
   function handeRequestProposal(car: Car) {
     setCar(car)
     if(onCreateProposal) onCreateProposal(carBrand!.key, car.key)
-
-   
   }
 
   function handleAcceptProposal(paymentPlan:PaymentPlan) {
       setPaymentPlan(paymentPlan)
-      setContract({
-        proposal: proposal!,
-        playmentPlan: paymentPlan!,
-        createdAt: new Date(),
-        signed: false
-      } as Contract)
+     
       setStep({...steps, showSignContract: true})
+      if(onCreateContract) onCreateContract(proposal!.key, paymentPlan.months)
   }
 
   return (

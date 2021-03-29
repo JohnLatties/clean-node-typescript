@@ -10,7 +10,7 @@ interface ContractStepProps {
 function ContractStep({contract, onSignContract }: ContractStepProps) {
   const [agreed, setAgreed] = useState(false)
 
-  const { proposal, playmentPlan, signed } = contract
+  const { proposal, paymentPlan, signed } = contract
   const { car, carBrand, proposalNumber} = proposal
 
   return(
@@ -22,7 +22,7 @@ function ContractStep({contract, onSignContract }: ContractStepProps) {
         {`Proposal number: ${proposalNumber}`}
       </Description>
       <Description>
-        {`Payment plan: $${playmentPlan.value} in ${playmentPlan.months} months`}
+        {`Payment plan: $${paymentPlan.value} in ${paymentPlan.months} months`}
       </Description>
       <ActionArea>
         {!signed && <div>
