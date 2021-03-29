@@ -1,4 +1,4 @@
-import { Car } from './Cat'
+import { Car } from './Car'
 
 export interface PaymentPlan {
   months: number
@@ -6,13 +6,20 @@ export interface PaymentPlan {
 }
 
 export interface Proposal {
-  number: string
+  key: string
+  proposalNumber: string
   carBrand: {
+    key: string
     name: string,
     image: string
   }
   car: Car
   createdAt: Date
+  updatedAt: Date
   apr: number
   paymentOptions: PaymentPlan[]
+}
+
+export interface ProposalCreated {
+  key: string
 }

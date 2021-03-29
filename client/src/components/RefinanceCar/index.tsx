@@ -5,13 +5,15 @@ import CarStep from './CarStep'
 import RefinanceStepBase from './RefinanceStepBase'
 import { Container } from './styles'
 import next from '../../assets/image/next.svg'
-import { Car } from '../../models/Cat'
+import { Car } from '../../models/Car'
 import ProposalStep from './ProposalStep'
 import { PaymentPlan, Proposal } from '../../models/Proposal'
 import { Contract } from '../../models/Contract'
 import ContractStep from './ContractStep'
 interface RefinanceCarProps {
-  carBrand: CarBrand
+  carBrand: CarBrand,
+  proposal?: Proposal
+  onCreateProposal?: (carBrandKey: string, carKey: string) => void
 }
 
 interface Step{
@@ -21,10 +23,10 @@ interface Step{
   showSignContract?: boolean
 }
 
-function RefinanceCar ({carBrand}: RefinanceCarProps) {
+function RefinanceCar ({carBrand, proposal, onCreateProposal}: RefinanceCarProps) {
   const [steps, setStep] = useState<Step>({showSelectBrand: true})
   const [car, setCar] = useState<Car | null>(null)
-  const [proposal, setProposal] = useState<Proposal | null>(null)
+  // const [proposal, setProposal] = useState<Proposal | null>(null)
   const [paymentPlan, setPaymentPlan] = useState<PaymentPlan | null>(null)
   const [contract, setContract] = useState<Contract | null>(null)
 
@@ -34,18 +36,15 @@ function RefinanceCar ({carBrand}: RefinanceCarProps) {
     }, 500)
   }, [])
 
+  useEffect(() => {
+   if(proposal)  setStep({...steps, showSelectProposal: true})
+  }, [proposal])
+
   function handeRequestProposal(car: Car) {
     setCar(car)
-    setProposal({
-      car: car,
-      carBrand: { name: carBrand.name!, image: carBrand.image!},
-      apr: 10,
-      createdAt: new Date(),
-      number: `#${Date.now()}`,
-      paymentOptions: [{ months: 36, value: 300.5}, {months: 48, value: 270.8}]
-    } as Proposal)
+    if(onCreateProposal) onCreateProposal(carBrand!.key, car.key)
 
-    setStep({...steps, showSelectProposal: true})
+   
   }
 
   function handleAcceptProposal(paymentPlan:PaymentPlan) {

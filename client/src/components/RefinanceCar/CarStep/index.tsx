@@ -1,6 +1,6 @@
-import React, {useEffect, memo, useState, useRef}  from 'react'
+import React, { memo, useState}  from 'react'
 import HorizontalScroll from 'react-scroll-horizontal'
-import { Car } from '../../../models/Cat'
+import { Car } from '../../../models/Car'
 import { Proposal } from '../../../models/Proposal'
 import { 
   Container,
@@ -13,7 +13,7 @@ import {
 
 interface CarSteprops {
   cars: Car[],
-  proposalCreated: Proposal | null
+  proposalCreated?: Proposal
   onRequesProposal: (car: Car) => void
 }
 
